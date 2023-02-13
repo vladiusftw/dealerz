@@ -17,7 +17,7 @@ type Props = {};
 const Navbar = (props: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <Box>
+    <Box pos={"relative"}>
       <Container maxW={"8xl"}>
         <HStack justifyContent={"space-between"} mt={[4]}>
           <Text color={"#F86338"} fontWeight={"700"} size={"3xl"}>
@@ -36,24 +36,34 @@ const Navbar = (props: Props) => {
         </HStack>
       </Container>
       <Box bgColor={"#F4F7F8"} py={[8]}>
-        <Container maxW={"8xl"} pos={"relative"}>
+        <Container maxW={"8xl"}>
           <VStack
-            pos={"absolute"}
+            pos={"fixed"}
+            zIndex={1}
             bgColor={"#F86338"}
-            px={[20, 28]}
+            px={[8, 20]}
             py={[4]}
-            top={"4em"}
-            borderRadius={"xl"}
+            top={"0"}
+            left={0}
+            h={"100vh"}
             display={{ base: isOpen ? "flex" : "none", lg: "none" }}
+            pt={[48]}
+            spacing={[6]}
           >
-            <Text size={"sm"}>Shop</Text>
-            <Text size={"sm"}>Promo</Text>
-            <Text size={"sm"}>About</Text>
-            <Text size={"sm"}>Blog</Text>
+            <Text size={["lg", "xl"]}>Shop</Text>
+            <Text size={["lg", "xl"]}>Promo</Text>
+            <Text size={["lg", "xl"]}>About</Text>
+            <Text size={["lg", "xl"]}>Blog</Text>
+            <Text size={["lg", "xl"]} display={{ base: "block", md: "none" }}>
+              Profile
+            </Text>
+            <Text size={["lg", "xl"]} display={{ base: "block", md: "none" }}>
+              Notifications
+            </Text>
           </VStack>
           <HStack justifyContent={"space-between"}>
-            <Box display={{ base: "block", lg: "none" }}>
-              <Hamburger toggled={isOpen} toggle={setIsOpen} />
+            <Box display={{ base: "block", lg: "none" }} zIndex={2}>
+              <Hamburger toggled={isOpen} toggle={setIsOpen} size={25} />
             </Box>
 
             <HStack
@@ -81,35 +91,22 @@ const Navbar = (props: Props) => {
               />
               <Image src={"/search.png"} width={"20px"} height={"20px"} />
             </HStack>
-            <HStack
-              spacing={[2, 6, 8, 10, 12]}
-              display={{ base: "none", md: "flex" }}
-            >
+            <HStack spacing={[2, 6, 8, 10, 12]}>
               <Image src={"/heart.png"} width={"25px"} height={"25px"} />
               <Image src={"/cart.png"} width={"25px"} height={"25px"} />
-              <Image src={"/profile.png"} width={"25px"} height={"25px"} />
-              <Image src={"/bell.png"} width={"25px"} height={"25px"} />
-            </HStack>
-            <HStack
-              spacing={[2, 6, 8, 10, 12]}
-              display={{ base: "flex", md: "none" }}
-            >
-              <Stack
-                flexDir={{ base: "column", md: "row" }}
-                alignItems={"center"}
-                justifyContent={"center"}
-              >
-                <Image src={"/heart.png"} width={"25px"} height={"25px"} />
-                <Image src={"/cart.png"} width={"25px"} height={"25px"} />
-              </Stack>
-              <Stack
-                flexDir={{ base: "column", md: "row" }}
-                alignItems={"center"}
-                justifyContent={"center"}
-              >
-                <Image src={"/profile.png"} width={"25px"} height={"25px"} />
-                <Image src={"/bell.png"} width={"25px"} height={"25px"} />
-              </Stack>
+
+              <Image
+                src={"/profile.png"}
+                width={"25px"}
+                height={"25px"}
+                display={{ base: "none", md: "block" }}
+              />
+              <Image
+                src={"/bell.png"}
+                width={"25px"}
+                height={"25px"}
+                display={{ base: "none", md: "block" }}
+              />
             </HStack>
           </HStack>
         </Container>

@@ -1,4 +1,4 @@
-import { ChevronDownIcon } from "@chakra-ui/icons";
+import { ChevronDownIcon, ArrowForwardIcon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
@@ -7,11 +7,13 @@ import {
   GridItem,
   Heading,
   HStack,
+  Image,
   Menu,
   MenuButton,
   MenuItem,
   MenuList,
   Text,
+  VStack,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 
@@ -30,11 +32,37 @@ const Collection = (props: Props) => {
     "Skirt",
     "T-Shirt",
   ];
+  const items = [
+    {
+      category: "Dress",
+      name: "Tropical Suit",
+    },
+    {
+      category: "Dress",
+      name: "Tropical Suit",
+    },
+    {
+      category: "Dress",
+      name: "Tropical Suit",
+    },
+    {
+      category: "Dress",
+      name: "Tropical Suit",
+    },
+    {
+      category: "Dress",
+      name: "Tropical Suit",
+    },
+    {
+      category: "Dress",
+      name: "Tropical Suit",
+    },
+  ];
   return (
     <Box bgColor={"#F4F7F8"}>
       <Container
         maxW={"8xl"}
-        py={[20]}
+        py={[24]}
         display={"flex"}
         flexDir={"column"}
         alignItems={"center"}
@@ -84,7 +112,7 @@ const Collection = (props: Props) => {
           ]}
           gap={[12]}
           alignItems={"center"}
-          mt={[12]}
+          mt={[8]}
         >
           {categories.map((item, index) => {
             return (
@@ -105,6 +133,65 @@ const Collection = (props: Props) => {
             );
           })}
         </Grid>
+        <Grid
+          templateColumns={[
+            "repeat(1, 1fr)",
+            "repeat(2, 1fr)",
+            null,
+            "repeat(3, 1fr)",
+            "repeat(4, 1fr)",
+          ]}
+          gap={2}
+          w={"100%"}
+          maxW={"7xl"}
+          mt={[8]}
+        >
+          {items.map((item, index) => {
+            return (
+              <GridItem bgColor={"white"} py={[12]} px={[6]}>
+                <VStack alignItems={"start"} spacing={[4]}>
+                  <Box h={"300px"} />
+                  <Text color={"#9A9AB0"} fontWeight={"700"} size={"xs"}>
+                    Category {item.category}
+                  </Text>
+                  <Text fontWeight={"700"} size={"xl"}>
+                    {item.name}
+                  </Text>
+                  <Button
+                    variant={"unstyled"}
+                    bgColor={"#F86338"}
+                    borderRadius={"3xl"}
+                    size={"sm"}
+                    alignItems={"center"}
+                    justifyContent={"center"}
+                  >
+                    <ArrowForwardIcon color={"white"} w={17} h={17} />
+                  </Button>
+                </VStack>
+              </GridItem>
+            );
+          })}
+        </Grid>
+        <Button
+          variant={"ghost"}
+          bgColor={"#F86338"}
+          fontWeight={"700"}
+          size={"sm"}
+          color={"white"}
+          border={"2px solid white"}
+          py={[6]}
+          px={[6]}
+          mt={[12]}
+          _active={{}}
+          _focus={{}}
+          _hover={{
+            bgColor: "white",
+            border: "2px solid #F86338",
+            color: "black",
+          }}
+        >
+          Find out More
+        </Button>
       </Container>
     </Box>
   );

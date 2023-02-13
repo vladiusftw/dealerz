@@ -10,6 +10,7 @@ import {
 import React from "react";
 import Hero from "../components/home/Hero";
 import Collection from "../components/reusable/Collection";
+import TopItems from "../components/reusable/TopItems";
 
 type Props = {};
 
@@ -18,6 +19,7 @@ const Home = (props: Props) => {
     <>
       <Hero />
       <Collection title={"Our Premium Collection"} />
+      <TopItems />
     </>
   );
 };

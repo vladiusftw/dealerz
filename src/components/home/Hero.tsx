@@ -17,17 +17,17 @@ const Hero = (props: Props) => {
       pos={"relative"}
       background={"url('/homeHeroBg.png') no-repeat"}
       backgroundSize={"cover"}
-      backgroundPosition={"40%"}
+      backgroundPosition={"30%"}
       py={[12]}
     >
       <Container
         maxW={"8xl"}
         display={"flex"}
         flexDir={"column"}
-        alignItems={"end"}
+        alignItems={{ base: "start", md: "end" }}
         py={[36]}
       >
-        <VStack alignItems={"start"} spacing={[12]}>
+        <VStack alignItems={"start"} spacing={[8, null, 12]}>
           <Heading whiteSpace={"pre-line"} size={"4xl"} fontWeight={"700"}>
             {"Your Premium\nSound, Unplugged!"}
           </Heading>
