@@ -54,17 +54,23 @@ const Shopping = (props: Props) => {
       setItemsCategory([
         ...items
           .sort((a, b) => b.price - a.price)
-          .filter((item) => item.price >= value[0] && item.price <= value[1]),
+          .filter((item) =>
+            search != ""
+              ? item.name.toLowerCase().startsWith(search.toLowerCase())
+              : true && item.price >= value[0] && item.price <= value[1]
+          ),
       ]);
     else
       setItemsCategory([
         ...items
           .sort((a, b) => b.price - a.price)
-          .filter(
-            (item) =>
-              item.category == category &&
-              item.price >= value[0] &&
-              item.price <= value[1]
+          .filter((item) =>
+            search != ""
+              ? item.name.toLowerCase().startsWith(search.toLowerCase())
+              : true &&
+                item.category == category &&
+                item.price >= value[0] &&
+                item.price <= value[1]
           ),
       ]);
   }, [category]);
@@ -74,17 +80,23 @@ const Shopping = (props: Props) => {
       setItemsCategory([
         ...items
           .sort((a, b) => b.price - a.price)
-          .filter((item) => item.price >= value[0] && item.price <= value[1]),
+          .filter((item) =>
+            search != ""
+              ? item.name.toLowerCase().startsWith(search.toLowerCase())
+              : true && item.price >= value[0] && item.price <= value[1]
+          ),
       ]);
     else
       setItemsCategory([
         ...items
           .sort((a, b) => b.price - a.price)
-          .filter(
-            (item) =>
-              item.category == category &&
-              item.price >= value[0] &&
-              item.price <= value[1]
+          .filter((item) =>
+            search != ""
+              ? item.name.toLowerCase().startsWith(search.toLowerCase())
+              : true &&
+                item.category == category &&
+                item.price >= value[0] &&
+                item.price <= value[1]
           ),
       ]);
   }, [value]);
@@ -324,6 +336,32 @@ const Shopping = (props: Props) => {
     setNumPages(Math.ceil(itemsCategory.length / 6));
   }, [itemsCategory]);
 
+  useEffect(() => {
+    if (category == "All Products")
+      setItemsCategory([
+        ...items
+          .sort((a, b) => b.price - a.price)
+          .filter((item) =>
+            search != ""
+              ? item.name.toLowerCase().startsWith(search.toLowerCase())
+              : true && item.price >= value[0] && item.price <= value[1]
+          ),
+      ]);
+    else
+      setItemsCategory([
+        ...items
+          .sort((a, b) => b.price - a.price)
+          .filter((item) =>
+            search != ""
+              ? item.name.toLowerCase().startsWith(search.toLowerCase())
+              : true &&
+                item.category == category &&
+                item.price >= value[0] &&
+                item.price <= value[1]
+          ),
+      ]);
+  }, [search]);
+
   const getStars = (num: number) => {
     const content = [];
     for (var i = 0; i < num; i++) {
@@ -360,6 +398,7 @@ const Shopping = (props: Props) => {
                 placeholder={"Search products"}
                 p={0}
                 size={"md"}
+                onChange={(e) => setSearch(e.target.value)}
               />
               <Image src={"/search.png"} w={"20px"} h={"20px"} />
             </HStack>
