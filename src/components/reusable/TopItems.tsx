@@ -8,7 +8,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -82,9 +82,6 @@ const TopItems = (props: Props) => {
   const [g1700l1900] = useMediaQuery(
     "(min-width: 1700px) and (max-width: 1900px)"
   );
-  const [g1900l2100] = useMediaQuery(
-    "(min-width: 1900px) and (max-width: 2100px)"
-  );
 
   useEffect(() => {
     if (g0l500) setSlidesPerView(1);
@@ -118,18 +115,14 @@ const TopItems = (props: Props) => {
     if (g1700l1900) setSlidesPerView(3.8);
   }, [g1700l1900]);
 
-  useEffect(() => {
-    if (g1900l2100) setSlidesPerView(4.2);
-  }, [g1900l2100]);
-
   return (
     <Box>
-      <Container maxW={"8xl"} py={[24]}>
-        <VStack spacing={[8]} mb={[12]}>
+      <Container maxW={"8xl"} py={[12, null, null, 24]}>
+        <VStack spacing={[4, null, null, 8]} mb={[8, null, null, 12]}>
           <Heading size={"3xl"} fontWeight={"700"}>
             Top Items
           </Heading>
-          <Text whiteSpace={"pre-line"} textAlign={"center"}>
+          <Text whiteSpace={"pre-line"} textAlign={"center"} size={"sm"}>
             {
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
             }
@@ -167,7 +160,12 @@ const TopItems = (props: Props) => {
                   >
                     SALE
                   </Text>
-                  <VStack w={"100%"} bgColor={"#E2E2EA"} py={[6]}>
+                  <VStack
+                    w={"100%"}
+                    bgColor={"#E2E2EA"}
+                    py={[6]}
+                    borderRadius={"lg"}
+                  >
                     <Box w={"100%"} h={"350px"} />
                     <Text fontWeight={"700"} size={"md"}>
                       {item.name}

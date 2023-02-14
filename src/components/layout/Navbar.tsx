@@ -21,7 +21,7 @@ const Navbar = (props: Props) => {
       <Container maxW={"8xl"}>
         <HStack justifyContent={"space-between"} mt={[4]}>
           <Text color={"#F86338"} fontWeight={"700"} size={"3xl"}>
-            Dealerz
+            Dealerz.
           </Text>
           <HStack fontWeight={"500"} spacing={[2, 4, 8]}>
             <HStack>
@@ -50,7 +50,9 @@ const Navbar = (props: Props) => {
             pt={[48]}
             spacing={[6]}
           >
-            <Text size={["lg", "xl"]}>Shop</Text>
+            <Link to={"/shop"}>
+              <Text size={["lg", "xl"]}>Shop</Text>
+            </Link>
             <Text size={["lg", "xl"]}>Promo</Text>
             <Text size={["lg", "xl"]}>About</Text>
             <Text size={["lg", "xl"]}>Blog</Text>
@@ -72,7 +74,10 @@ const Navbar = (props: Props) => {
               display={{ base: "none", lg: "flex" }}
               color={"#11142D"}
             >
-              <Text size={"xs"}>Shop</Text>
+              <Link to={"/shop"}>
+                <Text size={"xs"}>Shop</Text>
+              </Link>
+
               <Text size={"xs"}>Promo</Text>
               <Text size={"xs"}>About</Text>
               <Text size={"xs"}>Blog</Text>

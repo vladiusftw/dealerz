@@ -6,12 +6,17 @@ import Layout from "./components/layout";
 import theme from "./theme";
 
 import "@fontsource/dm-sans";
+import Shop from "./pages/Shop";
 
 export const App = () => {
   const routes = [
     {
-      path: "",
+      path: "/",
       element: <Home />,
+    },
+    {
+      path: "/shop",
+      element: <Shop />,
     },
   ];
   return (

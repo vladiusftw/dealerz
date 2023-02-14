@@ -62,13 +62,13 @@ const Collection = (props: Props) => {
     <Box bgColor={"#F4F7F8"}>
       <Container
         maxW={"8xl"}
-        py={[24]}
+        py={[12, null, null, 24]}
         display={"flex"}
         flexDir={"column"}
         alignItems={"center"}
       >
         <HStack>
-          <Heading fontWeight={"700"} size={"2xl"}>
+          <Heading fontWeight={"700"} size={"3xl"}>
             {props.title}
           </Heading>
           <Box display={{ base: "block", md: "none" }} mt={[12]}>

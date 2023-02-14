@@ -11,7 +11,7 @@ const styles: Styles = {
         // },
         // fontFeatureSettings: "'ss01' on, 'ss04' on, 'salt' on, 'titl' on",
         bgColor: "white",
-        color: "black",
+        color: "#11142D",
         // h1: {
         //   fontSize: ['5xl', '6xl', null, '7xl'],
         //   lineHeight: ['shorter'],

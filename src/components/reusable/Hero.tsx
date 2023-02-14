@@ -9,7 +9,11 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 
-type Props = {};
+type Props = {
+  title: string;
+  desc: string;
+  button: boolean;
+};
 
 const Hero = (props: Props) => {
   return (
@@ -17,24 +21,21 @@ const Hero = (props: Props) => {
       pos={"relative"}
       background={"url('/homeHeroBg.png') no-repeat"}
       backgroundSize={"cover"}
-      backgroundPosition={"30%"}
-      py={[12]}
+      py={[12, null, null, 24]}
     >
       <Container
         maxW={"8xl"}
         display={"flex"}
         flexDir={"column"}
         alignItems={{ base: "start", md: "end" }}
-        py={[36]}
+        py={[12, null, null, 24]}
       >
         <VStack alignItems={"start"} spacing={[8, null, 12]}>
           <Heading whiteSpace={"pre-line"} size={"4xl"} fontWeight={"700"}>
-            {"Your Premium\nSound, Unplugged!"}
+            {props.title}
           </Heading>
-          <Text whiteSpace={"pre-line"} color={"#515151"}>
-            {
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit,\nsed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-            }
+          <Text whiteSpace={"pre-line"} color={"#515151"} size={"sm"}>
+            {props.desc}
           </Text>
           <Button
             variant={"ghost"}
@@ -52,6 +53,7 @@ const Hero = (props: Props) => {
               border: "2px solid #F86338",
               color: "black",
             }}
+            display={props.button ? "flex" : "none"}
           >
             Find out More
           </Button>
