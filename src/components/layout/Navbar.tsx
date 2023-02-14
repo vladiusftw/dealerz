@@ -101,7 +101,9 @@ const Navbar = (props: Props) => {
             </HStack>
             <HStack spacing={[2, 6, 8, 10, 12]}>
               <Image src={"/heart.png"} width={"25px"} height={"25px"} />
-              <Image src={"/cart.png"} width={"25px"} height={"25px"} />
+              <Link to={"/cart"}>
+                <Image src={"/cart.png"} width={"25px"} height={"25px"} />
+              </Link>
 
               <Image
                 src={"/profile.png"}

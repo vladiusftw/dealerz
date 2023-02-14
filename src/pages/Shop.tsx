@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Hero from "../components/reusable/Hero";
 import Newsletter from "../components/reusable/Newsletter";
 import Shopping from "../components/shop/Shopping";
@@ -6,6 +6,9 @@ import Shopping from "../components/shop/Shopping";
 type Props = {};
 
 const Shop = (props: Props) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Hero

@@ -1,13 +1,4 @@
-import {
-  Box,
-  Button,
-  Container,
-  Heading,
-  Image,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect } from "react";
 import Achievement from "../components/home/Achievement";
 import Articles from "../components/home/Articles";
 import Story from "../components/home/Story";
@@ -20,6 +11,9 @@ import TopItems from "../components/reusable/TopItems";
 type Props = {};
 
 const Home = (props: Props) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Hero

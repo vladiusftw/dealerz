@@ -5,6 +5,7 @@ import {
   Heading,
   HStack,
   Image,
+  Input,
   Stack,
   Text,
   VStack,
@@ -196,9 +197,119 @@ const Hero = (props: Props) => {
                 );
               })}
             </VStack>
-            <VStack w={"100%"} flex={0.8} alignItems={"start"}>
-              <Text>hi</Text>
-            </VStack>
+            <Stack
+              w={"100%"}
+              flex={0.8}
+              alignItems={"start"}
+              gap={[8]}
+              flexDir={["column", null, "row", "column"]}
+            >
+              <VStack
+                alignItems={"start"}
+                w={"100%"}
+                bgColor={"white"}
+                px={[8, null, null, 6, 12]}
+                py={[14, null, null, 12]}
+                borderRadius={"lg"}
+                spacing={[4, null, null, 6]}
+              >
+                <Text fontWeight={"700"} size={"lg"}>
+                  Have a Coupon?
+                </Text>
+                <Input
+                  border={"2px solid #F86338"}
+                  placeholder={"Input your email here"}
+                  size={"sm"}
+                  borderRadius={"lg"}
+                />
+                <Button
+                  variant={"ghost"}
+                  bgColor={"#F86338"}
+                  color={"white"}
+                  fontWeight={"700"}
+                  size={"sm"}
+                  px={[8]}
+                  py={[6]}
+                  border={"2px solid transparent"}
+                  _hover={{
+                    bgColor: "transparent",
+                    border: "2px solid #F86338",
+                    color: "#11142D",
+                  }}
+                >
+                  Apply
+                </Button>
+              </VStack>
+              <VStack
+                alignItems={"start"}
+                w={"100%"}
+                spacing={[4, null, null, 6]}
+              >
+                <Text fontWeight={"700"} size={"md"}>
+                  Cart Totals
+                </Text>
+                <HStack w={"100%"}>
+                  <Text flex={0.25} fontWeight={"700"} size={"sm"}>
+                    Subtotal
+                  </Text>
+                  <Text flex={0.75} size={"sm"}>
+                    $150
+                  </Text>
+                </HStack>
+                <HStack w={"100%"}>
+                  <Text flex={0.25} fontWeight={"700"} size={"sm"}>
+                    Shipping
+                  </Text>
+                  <Text flex={0.75} size={"sm"}>
+                    Free Shipping
+                  </Text>
+                </HStack>
+                <HStack w={"100%"}>
+                  <Box flex={0.25} />
+                  <HStack
+                    w={"100%"}
+                    flex={0.75}
+                    justifyContent={"space-between"}
+                  >
+                    <Text size={"sm"}>Shipping to Sidney</Text>
+                    <Button
+                      variant={"unstyled"}
+                      fontWeight={"700"}
+                      color={"#F86338"}
+                      size={"sm"}
+                    >
+                      Change
+                    </Button>
+                  </HStack>
+                </HStack>
+                <HStack w={"100%"}>
+                  <Text flex={0.25} fontWeight={"700"} size={"sm"}>
+                    Total
+                  </Text>
+                  <Text flex={0.75} fontWeight={"700"} size={"sm"}>
+                    $350
+                  </Text>
+                </HStack>
+                <Button
+                  variant={"ghost"}
+                  bgColor={"#F86338"}
+                  color={"white"}
+                  fontWeight={"700"}
+                  size={"sm"}
+                  px={[8]}
+                  py={[6]}
+                  w={"100%"}
+                  border={"2px solid transparent"}
+                  _hover={{
+                    bgColor: "transparent",
+                    border: "2px solid #F86338",
+                    color: "#11142D",
+                  }}
+                >
+                  Checkout
+                </Button>
+              </VStack>
+            </Stack>
           </Stack>
         </VStack>
       </Container>

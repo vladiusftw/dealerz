@@ -33,7 +33,8 @@ const Hero = (props: Props) => {
             flexDir={{ base: "column", lg: "row" }}
             flex={1}
             w={"100%"}
-            gap={{ base: 6, lg: 32 }}
+            gap={[8, null, null, 12, 24]}
+            alignItems={"start"}
           >
             <VStack w={"100%"} flex={{ base: "auto", md: 1 }}>
               <Box
@@ -69,15 +70,15 @@ const Hero = (props: Props) => {
               alignItems={"start"}
             >
               <VStack alignItems={"start"} spacing={[4]}>
-                <Heading fontWeight={"700"} size={"5xl"}>
+                <Text fontWeight={"700"} size={"5xl"} mt={-8}>
                   Urbano Jacket
-                </Heading>
+                </Text>
                 <HStack>{getStars(5)}</HStack>
-                <Heading fontWeight={"700"} size={"5xl"} color={"#F86338"}>
+                <Text fontWeight={"700"} size={"5xl"} color={"#F86338"}>
                   $99
-                </Heading>
+                </Text>
               </VStack>
-              <VStack alignItems={"start"} pt={[4]} spacing={[4]}>
+              <VStack alignItems={"start"} pt={[4]} spacing={[6]}>
                 <Text fontWeight={"700"} size={"md"}>
                   Details Product
                 </Text>
