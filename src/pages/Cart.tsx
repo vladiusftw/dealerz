@@ -1,24 +1,26 @@
 import React from "react";
+import CartHero from "../components/cart/Hero";
 import Hero from "../components/reusable/Hero";
 import Newsletter from "../components/reusable/Newsletter";
-import Shopping from "../components/shop/Shopping";
+import TopItems from "../components/reusable/TopItems";
 
 type Props = {};
 
-const Shop = (props: Props) => {
+const Cart = (props: Props) => {
   return (
     <>
       <Hero
-        title={"Home Shopping,\nYour Choice!"}
+        title={"Our Gallery,\nYour Dreams!"}
         desc={
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit,\nsed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
         }
         button={false}
       />
-      <Shopping />
-      <Newsletter paddingTop={[]} />
+      <CartHero />
+      <TopItems />
+      <Newsletter paddingTop={[24, null, null, 32]} />
     </>
   );
 };
 
-export default Shop;
+export default Cart;

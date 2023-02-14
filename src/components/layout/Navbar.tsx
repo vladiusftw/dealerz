@@ -20,9 +20,12 @@ const Navbar = (props: Props) => {
     <Box pos={"relative"}>
       <Container maxW={"8xl"}>
         <HStack justifyContent={"space-between"} mt={[4]}>
-          <Text color={"#F86338"} fontWeight={"700"} size={"3xl"}>
-            Dealerz.
-          </Text>
+          <Link to={"/"}>
+            <Text color={"#F86338"} fontWeight={"700"} size={"3xl"}>
+              Dealerz.
+            </Text>
+          </Link>
+
           <HStack fontWeight={"500"} spacing={[2, 4, 8]}>
             <HStack>
               <Image src={"/phone.png"} width={"20px"} height={"20px"} />

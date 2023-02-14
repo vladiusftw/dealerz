@@ -12,11 +12,13 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 
-type Props = {};
+type Props = {
+  paddingTop: Array<number | null>;
+};
 
 const Newsletter = (props: Props) => {
   return (
-    <Box bgColor={"#F4F7F8"} pb={[24, null, null, 32]}>
+    <Box bgColor={"#F4F7F8"} pb={[24, null, null, 32]} pt={props.paddingTop}>
       <Container maxW={"8xl"} py={[12, null, null, 24]} bgColor={"white"}>
         <VStack spacing={[4, null, null, 8]}>
           <Heading fontWeight={"700"} size={"3xl"}>

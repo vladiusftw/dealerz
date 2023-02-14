@@ -7,6 +7,8 @@ import theme from "./theme";
 
 import "@fontsource/dm-sans";
 import Shop from "./pages/Shop";
+import ProductDetail from "./pages/ProductDetail";
+import Cart from "./pages/Cart";
 
 export const App = () => {
   const routes = [
@@ -17,6 +19,14 @@ export const App = () => {
     {
       path: "/shop",
       element: <Shop />,
+    },
+    {
+      path: "/shop/:product_id",
+      element: <ProductDetail />,
+    },
+    {
+      path: "/cart",
+      element: <Cart />,
     },
   ];
   return (

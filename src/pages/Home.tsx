@@ -35,7 +35,7 @@ const Home = (props: Props) => {
       <Achievement />
       <Reviews />
       <Articles />
-      <Newsletter />
+      <Newsletter paddingTop={[]} />
     </>
   );
 };
