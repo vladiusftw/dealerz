@@ -79,9 +79,7 @@ const TopItems = (props: Props) => {
   const [g1500l1700] = useMediaQuery(
     "(min-width: 1500px) and (max-width: 1700px)"
   );
-  const [g1700l1900] = useMediaQuery(
-    "(min-width: 1700px) and (max-width: 1900px)"
-  );
+  const [g1700] = useMediaQuery("(min-width: 1700px)");
 
   useEffect(() => {
     if (g0l500) setSlidesPerView(1);
@@ -112,8 +110,8 @@ const TopItems = (props: Props) => {
   }, [g1500l1700]);
 
   useEffect(() => {
-    if (g1700l1900) setSlidesPerView(3.8);
-  }, [g1700l1900]);
+    if (g1700) setSlidesPerView(3.8);
+  }, [g1700]);
 
   return (
     <Box>
